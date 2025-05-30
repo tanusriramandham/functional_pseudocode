@@ -1,0 +1,6 @@
+FUNCTION logging_module(time_to_hit, distance_traveled, success_ratio):
+    RETURN {
+        time_to_hit: time_to_hit,
+        distance_traveled_by_target: distance_traveled,
+        hit_success_ratio: success_ratio
+    }

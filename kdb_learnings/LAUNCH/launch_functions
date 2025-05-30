@@ -1,0 +1,12 @@
+FUNCTION launch_module(missile_type, shell_type, num_shells):
+    LAUNCH shell_type num_shells
+    LAUNCH missile_type
+
+    success_ratio = random_between(70, 100)  // simulate success rate
+
+    RETURN {
+        missile_type: missile_type,
+        shell_type: shell_type,
+        num_shells_launched: num_shells,
+        success_ratio: success_ratio
+    }

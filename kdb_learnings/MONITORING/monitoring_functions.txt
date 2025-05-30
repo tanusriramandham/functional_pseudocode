@@ -1,0 +1,12 @@
+FUNCTION monitoring_module(radius):
+    monitoring_status = monitor_radius(radius)
+    RETURN {
+        status: monitoring_status,
+        radius: radius
+    }
+
+FUNCTION monitor_radius(radius):
+    IF radius > 0 AND radius <= 150:
+        RETURN "Monitoring radius set to {radius} km"
+    ELSE:
+        RETURN "Invalid radius. Out of range."

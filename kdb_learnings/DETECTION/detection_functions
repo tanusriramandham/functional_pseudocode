@@ -1,0 +1,9 @@
+FUNCTION detection_module(size, type, speed, altitude, direction, source):
+    RETURN {
+        object_size: size,
+        object_type: type,
+        speed: speed,
+        altitude: altitude,
+        direction: direction,
+        estimated_source: source
+    }

@@ -1,0 +1,34 @@
+FUNCTION akash_teer_main_system(
+    radius,
+    object_size,
+    object_type,
+    speed,
+    altitude,
+    direction,
+    estimated_source,
+    missile_type,
+    shell_type
+):
+
+    // 1. MONITORING
+    monitoring_data = monitoring_module(radius)
+
+    // 2. DETECTION
+    detection_data = detection_module(object_size, object_type, speed, altitude, direction, estimated_source)
+
+    // 3. CALCULATE PATH
+    path_data = calculate_path_module(object_size, speed, altitude, direction)
+
+    // 4. LAUNCH
+    launch_data = launch_module(missile_type, shell_type, path_data.num_shells)
+
+    // 5. LOGGING
+    log_data = logging_module(path_data.time_to_hit, path_data.distance_traveled_by_target, launch_data.success_ratio)
+
+    RETURN {
+        monitoring: monitoring_data,
+        detection: detection_data,
+        path: path_data,
+        launch: launch_data,
+        logs: log_data
+    }
